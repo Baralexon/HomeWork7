@@ -7,19 +7,58 @@ using System.Threading.Tasks;
 
 namespace HomeWork7
 {
-
-
-
-
-
-
-
-
-
     internal class Program
     {
         static void Main(string[] args)
         {
+            Repository r = new Repository();
+
+            if (File.Exists(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt") == true) // проверка существования файла "employees.txt"
+            {
+                Console.WriteLine("Если хотите посмотреть список сотрудников нажмите - 1\n" +
+                "Если хотите вывести данные о Worker по заданному ID нажмите - 2\n" +
+                "Если хотите удалить данные о Worker по заданному ID нажмите - 3\n" +
+                "Если хотите удалить данные о Worker по заданному ID нажмите - 4\n" +
+                "Если хотите добавить нового worker в файл нажмите - 4\n" +
+                "Если хотите отфильтровать нужные записи нажмите - 5");
+                string N = Console.ReadLine();// выбор номера метода: от до 5D
+                switch (N)
+                {
+                    case "1":
+                        r.GetAllWorkers();
+                        break;
+                    case "2":
+                        Console.WriteLine("Введите номер ID");
+                        int ID = int.Parse(Console.ReadLine());
+                        r.GetWorkerById(ID);
+                        break;
+                    case "3":
+                        Console.WriteLine("Введите номер ID");
+                        int ID = int.Parse(Console.ReadLine());
+                        r.DeleteWorker(ID);
+                        break;
+                    case "4":
+                        r.AddWorker();
+                        break;
+                    case "5":
+                        r.GetWorkersBetweenTwoDates();
+                        break;
+
+                    default:
+                        Console.WriteLine("Введено неверно!");
+                        break;
+                }
+            }
+
+            else
+            {
+                    Console.WriteLine("Похоже, что справочник «Сотрудники» еще не существует и сейчас он будет создан");
+                    Console.ReadKey();
+                    r.AddWorker(Worker worker);
+            }       Console.ReadKey();
+            
         }
+
     }
+     
 }
