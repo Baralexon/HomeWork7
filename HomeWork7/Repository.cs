@@ -23,7 +23,7 @@ namespace HomeWork7
             // и возврат массива считанных экземпляров
             string text = File.ReadAllText(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt");
             string [] x = text.Split('#');
-            return  w;
+            return w.;
         }
 
         /// <summary>
