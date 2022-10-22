@@ -25,7 +25,7 @@ namespace HomeWork7
                 switch (N)
                 {
                     case "1":
-                        r.GetAllWorkers();
+                        Console.WriteLine(r.GetAllWorkers());
                         break;
                     case "2":
                         Console.WriteLine("Введите номер ID");

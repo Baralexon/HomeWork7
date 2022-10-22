@@ -25,7 +25,7 @@ namespace HomeWork7
             string [] x = text.Split('#');
             foreach (string line in x)
             {
-                return Worker(int ID);
+                return Worker[];
                
             }
             
@@ -65,24 +65,20 @@ namespace HomeWork7
         {
             // присваиваем worker уникальный ID,
             // дописываем нового worker в файл
-
+            
             Console.Write("Введите ID сотрудника: ");
-            string ID = Console.ReadLine();
+            worker.ID = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите Ф.И.О. сотрудника: ");
-            string FIO = Console.ReadLine();
+            worker.FIO = Console.ReadLine();
             Console.Write("Введите возраст сотрудника: ");
-            string age = Console.ReadLine();
+            worker.age = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите рост сотрудника (в см): ");
-            string height = Console.ReadLine();
+            worker.height = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите год рождения сотрудника: ");
-            int year = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите месяц рождения сотрудника: ");
-            int month = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите день рождения сотрудника: ");
-            int day = Convert.ToInt32(Console.ReadLine());
-            DateTime birthday = new DateTime(year, month, day);
+            worker.birthday = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Введите место рождения сотрудника: ");
-            string birthplace = Console.ReadLine();
+            worker.birthplace = Console.ReadLine();
+            
 
             string TEXT = $"{ID}#{DateTime.Now}#{FIO}#{age}#{height}#{birthday.ToShortDateString()}#{birthplace}";
             File.AppendAllText(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt", TEXT + "\n"); //
