@@ -23,7 +23,12 @@ namespace HomeWork7
             // и возврат массива считанных экземпляров
             string text = File.ReadAllText(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt");
             string [] x = text.Split('#');
-            return w.;
+            foreach (string line in x)
+            {
+                return Worker(int ID);
+               
+            }
+            
         }
 
         /// <summary>
@@ -37,7 +42,7 @@ namespace HomeWork7
             // происходит чтение из файла, возвращается Worker
             // с запрашиваемым ID
             string text = File.ReadAllText(@"employees.txt");
-            return Console.WriteLine(w.ID);
+            return w.ID;
         }
 
         /// <summary>
