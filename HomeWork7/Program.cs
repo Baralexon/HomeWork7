@@ -27,22 +27,22 @@ namespace HomeWork7
                     case "1":
                         Console.WriteLine(r.GetAllWorkers());
                         break;
-                    case "2":
-                        Console.WriteLine("Введите номер ID");
-                        int ID = int.Parse(Console.ReadLine());
-                        r.GetWorkerById(ID);
-                        break;
-                    case "3":
-                        Console.WriteLine("Введите номер ID");
-                        int ID = int.Parse(Console.ReadLine());
-                        r.DeleteWorker(ID);
-                        break;
-                    case "4":
-                        r.AddWorker();
-                        break;
-                    case "5":
-                        r.GetWorkersBetweenTwoDates();
-                        break;
+                    //case "2":
+                    //    Console.WriteLine("Введите номер ID");
+                    //    int ID = int.Parse(Console.ReadLine());
+                    //    r.GetWorkerById(ID);
+                    //    break;
+                    //case "3":
+                    //    Console.WriteLine("Введите номер ID");
+                    //    int ID = int.Parse(Console.ReadLine());
+                    //    r.DeleteWorker(ID);
+                    //    break;
+                    //case "4":
+                    //    r.AddWorker();
+                    //    break;
+                    //case "5":
+                    //    r.GetWorkersBetweenTwoDates();
+                    //    break;
 
                     default:
                         Console.WriteLine("Введено неверно!");
@@ -52,13 +52,14 @@ namespace HomeWork7
 
             else
             {
-                    Console.WriteLine("Похоже, что справочник «Сотрудники» еще не существует и сейчас он будет создан");
-                    Console.ReadKey();
-                    r.AddWorker(Worker worker);
-            }       Console.ReadKey();
-            
+                Console.WriteLine("Похоже, что справочник «Сотрудники» еще не существует и сейчас он будет создан");
+                Console.ReadKey();
+                //        r.AddWorker(Worker worker);
+                //}       Console.ReadKey();
+
+            }
+
         }
 
     }
-     
 }
