@@ -12,47 +12,64 @@ namespace HomeWork7
 {
     class Repository
     {
-        
-        
+
+
         /// <summary>
         /// Чтение из файла и возврат массива считанных экземпляров
         /// </summary>
         /// <returns></returns>
-        public void GetAllWorkers()
+        public void GetAllWorkers()  // Worker[] надо
         {
-            Worker w = new Worker();
             // здесь происходит чтение из файла
             // и возврат массива считанных экземпляров
+            Worker w = new Worker();
             using (StreamReader sr = new StreamReader("employees.txt"))
             {
-                string line;
+                string line = string.Empty;
+                Console.WriteLine($"{"ID", 1} {"время", 10} {"ФИО", 11} {"Возраст", 21} {"рост"} {"день рождения"} {"место рождения", 5}");
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string [] x = line.Split('#');
+                    foreach (string s in x)
+                    Console.Write($"{s} ");
+                    w.Print();
+                    Console.WriteLine();
+                    //Console.WriteLine(sr.ReadLine());
+                }
+                //return ;
+            }
+
+        }
+
+        /// <summary>
+        /// Чтение из файла, возвращается Worker с запрашиваемым ID
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public void GetWorkerById(int ID)  // Worker надо
+        {
+            // происходит чтение из файла, возвращается Worker
+            // с запрашиваемым ID
+            Worker w = new Worker();
+            using (StreamReader sr = new StreamReader("employees.txt"))
+            {
+                string line = String.Empty;
 
                 while ((line = sr.ReadLine()) != null)
                 {
                     string[] x = line.Split('#');
-                    //return w;
+                    foreach (string s in x)
+                    //return s;
                     w.Print();
-                    
-                    // Console.WriteLine(sr.ReadLine());
+                    Console.WriteLine(sr.ReadLine());
                 }
-               
+
             }
-                        
         }
 
-        ///// <summary>
-        ///// Чтение из файла, возвращается Worker с запрашиваемым ID
-        ///// </summary>
-        ///// <param name="ID"></param>
-        ///// <returns></returns>
-        //public Worker GetWorkerById(int ID)
-        //{
-        //    Worker w = new Worker();
-        //    // происходит чтение из файла, возвращается Worker
-        //    // с запрашиваемым ID
-        //    string text = File.ReadAllText(@"employees.txt");
-        //    return w.ID;
-        //}
+
+
 
         ///// <summary>
         ///// Удаление Worker по ID
@@ -74,7 +91,7 @@ namespace HomeWork7
         //{
         //    // присваиваем worker уникальный ID,
         //    // дописываем нового worker в файл
-            
+
         //    Console.Write("Введите ID сотрудника: ");
         //    worker.ID = Convert.ToInt32(Console.ReadLine());
         //    Console.Write("Введите Ф.И.О. сотрудника: ");
@@ -87,7 +104,7 @@ namespace HomeWork7
         //    worker.birthday = Convert.ToDateTime(Console.ReadLine());
         //    Console.Write("Введите место рождения сотрудника: ");
         //    worker.birthplace = Console.ReadLine();
-            
+
 
         //    string TEXT = $"{ID}#{DateTime.Now}#{FIO}#{age}#{height}#{birthday.ToShortDateString()}#{birthplace}";
         //    File.AppendAllText(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt", TEXT + "\n"); //

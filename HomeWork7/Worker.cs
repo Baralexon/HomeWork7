@@ -38,7 +38,7 @@ namespace HomeWork7
 
         public string Print()
         {
-            return $"{ID}#{DateTime.Now}#{FIO}#{age}#{height}#{birthday.ToShortDateString()}#{birthplace}";
+            return $"{ID}#{DateTime.Now}#{FIO}#{age}#{height}#{birthday.ToShortDateString()}#{birthplace}\n";
         }
 
 

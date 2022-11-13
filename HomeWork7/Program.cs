@@ -13,25 +13,26 @@ namespace HomeWork7
         {
             Repository r = new Repository();
 
-            if (File.Exists(@"c:\Users\Александр\source\repos\HomeWork7\employees.txt") == true) // проверка существования файла "employees.txt"
+            if (File.Exists(@"employees.txt") == true) // проверка существования файла "employees.txt"
             {
                 Console.WriteLine("Если хотите посмотреть список сотрудников нажмите - 1\n" +
                 "Если хотите вывести данные о Worker по заданному ID нажмите - 2\n" +
                 "Если хотите удалить данные о Worker по заданному ID нажмите - 3\n" +
-                "Если хотите удалить данные о Worker по заданному ID нажмите - 4\n" +
                 "Если хотите добавить нового worker в файл нажмите - 4\n" +
                 "Если хотите отфильтровать нужные записи нажмите - 5");
                 string N = Console.ReadLine();// выбор номера метода: от 1 до 5
                 switch (N)
                 {
                     case "1":
-                        Console.WriteLine(r.GetAllWorkers());
+                        r.GetAllWorkers();
+                        Console.ReadKey();
                         break;
-                    //case "2":
-                    //    Console.WriteLine("Введите номер ID");
-                    //    int ID = int.Parse(Console.ReadLine());
-                    //    r.GetWorkerById(ID);
-                    //    break;
+                    case "2":
+                        Console.WriteLine("Введите номер ID");
+                        int ID = int.Parse(Console.ReadLine());
+                        r.GetWorkerById(ID);
+                        Console.ReadKey();
+                        break;
                     //case "3":
                     //    Console.WriteLine("Введите номер ID");
                     //    int ID = int.Parse(Console.ReadLine());
@@ -46,6 +47,7 @@ namespace HomeWork7
 
                     default:
                         Console.WriteLine("Введено неверно!");
+                        Console.ReadKey();
                         break;
                 }
             }
