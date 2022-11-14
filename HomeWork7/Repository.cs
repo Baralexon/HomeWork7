@@ -33,9 +33,10 @@ namespace HomeWork7
                     string [] x = line.Split('#');
                     foreach (string s in x)
                     Console.Write($"{s} ");
+                     
                     w.Print();
                     Console.WriteLine();
-                    //Console.WriteLine(sr.ReadLine());
+                    
                 }
                 //return ;
             }
@@ -62,7 +63,7 @@ namespace HomeWork7
                     foreach (string s in x)
                     //return s;
                     w.Print();
-                    Console.WriteLine(sr.ReadLine());
+                    //Console.WriteLine(sr.ReadLine());
                 }
 
             }
